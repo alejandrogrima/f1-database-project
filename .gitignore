@@ -179,3 +179,34 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# ============================================
+# CONFIGURACIÓN ESPECÍFICA PROYECTO F1
+# ============================================
+
+# Datasets CSV grandes (NO subir a GitHub)
+data/raw/*.csv
+data/processed/*.csv
+data/scraped/*.csv
+
+# Pero SÍ permitir archivos de ejemplo pequeños
+!data/raw/sample_*.csv
+!data/processed/sample_*.csv
+
+# Archivos MySQL
+*.sql.backup
+*.dump
+*.sql~
+
+# Configuración local MySQL
+config.ini
+database.conf
+
+# Documentos temporales
+*.tmp
+~$*
+*.bak
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
