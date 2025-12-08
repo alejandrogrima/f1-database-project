@@ -13,7 +13,7 @@ CREATE TABLE PILOTO (
     surname VARCHAR(50),
     dob DATE,
     nationality VARCHAR(50),
-    URL VARCHAR(255)
+    url VARCHAR(255)
     );
     
 #Tabla de Equipo
@@ -45,7 +45,7 @@ CREATE TABLE CARRERA(
     raceRound INT,
     circuitId INT,
     FOREIGN KEY (circuitId) REFERENCES CIRCUITO(circuitId),
-    raceName VARCHAR(50),
+    raceName VARCHAR(100),
     raceDate DATE,
     raceTime TIME,
     url VARCHAR(255)
@@ -69,17 +69,17 @@ CREATE TABLE RESULTADO(
     
 #Tabla de Clasificación
 CREATE TABLE CLASIFICACION(
-	qualifiyingId INT PRIMARY KEY,
+	qualifyingId INT PRIMARY KEY,
 	raceId INT,
 	FOREIGN KEY (raceId) REFERENCES CARRERA(raceId),
     driverId INT,
     FOREIGN KEY (driverId) REFERENCES PILOTO(driverId),
     constructorId INT,
 	FOREIGN KEY (constructorId) REFERENCES EQUIPO(constructorId),
-	qualifiyingPosition INT,
+	qualifyingPosition INT,
     q1 VARCHAR(50),
     q2 VARCHAR(50),
-    q1 VARCHAR(50)
+    q3 VARCHAR(50)
     );
     
 #Tabla de la info scrapeada
