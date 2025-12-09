@@ -83,6 +83,17 @@ CREATE TABLE CLASIFICACION(
     );
     
 #Tabla de la info scrapeada
+CREATE TABLE INFO_SCRAPEADA (
+    infoId INT PRIMARY KEY,
+    driverId INT,
+    FOREIGN KEY (driverId) REFERENCES PILOTO(driverId),
+    totalChampionships INT,
+    totalWins INT,
+    totalPodiums INT,
+    biography TEXT,
+    sourceURL VARCHAR(255),
+    scrapingDate DATE
+	);
 
     
     
