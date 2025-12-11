@@ -82,18 +82,30 @@ CREATE TABLE CLASIFICACION(
     q3 VARCHAR(50)
     );
     
-#Tabla de la info scrapeada
-CREATE TABLE INFO_SCRAPEADA (
-    infoId INT PRIMARY KEY,
-    driverId INT,
-    FOREIGN KEY (driverId) REFERENCES PILOTO(driverId),
-    totalChampionships INT,
-    totalWins INT,
-    totalPodiums INT,
-    biography TEXT,
-    sourceURL VARCHAR(255),
-    scrapingDate DATE
-	);
+# Tabla de scraping de circuito
+CREATE TABLE INFO_CIRCUITO(
+    circuitId INT PRIMARY KEY,  
+    FOREIGN KEY (circuitId) REFERENCES CIRCUITO(circuitId),
+    capacity VARCHAR(50),
+    opened_year INT,            
+    length VARCHAR(50),         
+    turns INT
+);
+
+# Tabla de scraping de Equipo
+CREATE TABLE INFO_EQUIPO(
+	constructorId INT PRIMARY KEY,
+    FOREIGN KEY (constructorId) REFERENCES EQUIPO(constructorId),
+    championships INT,
+    race_wins INT,
+    pole_positions INT,
+    fastest_laps INT 
+    );
+
+
+
+    
+
 
     
     
